@@ -1,0 +1,4 @@
+<%= simple_form_for([@deck, @card], html: {class: 'form-horizontal'}) do |f| %>
+    <%= f.input :card_type, collection: Card::CARD_TYPES %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

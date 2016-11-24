@@ -1,0 +1,7 @@
+<%= link_to "Add Card", new_deck_card_path(@deck), class: "btn btn-success" %>
+
+<%= @cards.count %> Cards Created <br />
+
+<% @cards.each do |c| %>
+    <%= c.card_type %>
+<% end %>

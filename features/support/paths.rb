@@ -20,6 +20,17 @@ module NavigationHelpers
 
       when /the decks page/
         decks_path
+
+      when /create card front page/
+        card = Card.last
+        deck = Deck.last
+        new_deck_card_card_front_path(deck, card)
+
+      when /create card back page/
+        card = Card.last
+        deck = Deck.last
+        new_deck_card_card_back_path(deck, card)
+
       # Add more mappings here.
       # Here is an example that pulls values out of the Regexp:
       #
