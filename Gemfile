@@ -13,7 +13,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'cucumber-rails', :require => false
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', :require => false
 end
 

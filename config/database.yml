@@ -10,7 +10,7 @@ development:
   database: devans-app_development
 
 
-test:
+test: &test
   <<: *default
   database: devans-app_test
 
@@ -18,3 +18,6 @@ test:
 production:
   <<: *default
   database: devans-app_production
+
+cucumber:
+  <<: *test
