@@ -30,3 +30,7 @@ end
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
 end
+
+When /^(?:|I )choose "([^"]*)"$/ do |field|
+  choose(field)
+end

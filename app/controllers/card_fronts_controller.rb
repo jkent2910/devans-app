@@ -19,8 +19,14 @@ class CardFrontsController < ApplicationController
 
     respond_to do |format|
       if @card_front.save
-        format.html { redirect_to new_deck_card_card_back_path(@deck, @card), notice: "Front created!" }
-        format.json { render :show, status: :created, location: @card_front}
+        if @card.card_type == "Multiple Choice"
+          format.html { redirect_to deck_path(@deck), notice: "Card created!" }
+          format.json { render :show, status: :created, location: @card_front}
+        else
+          format.html { redirect_to new_deck_card_card_back_path(@deck, @card), notice: "Front created!" }
+          format.json { render :show, status: :created, location: @card_front}
+        end
+
       else
         format.html { render :new }
         format.json { render json: @card_front.errors, status: :unprocessable_entity}
@@ -47,7 +53,7 @@ class CardFrontsController < ApplicationController
   end
 
   def card_front_params
-    params.require(:card_front).permit(:question, :card_id)
+    params.require(:card_front).permit(:question, :card_id, choices_attributes: [:id, :choice_text, :answer, :_destroy])
   end
 
 end

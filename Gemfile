@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'cocoon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -29,6 +30,7 @@ end
 group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', :require => false
 end
 
