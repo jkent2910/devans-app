@@ -14,6 +14,12 @@ module NavigationHelpers
       when /control center page/
         control_center_path
 
+      when /the "(.*?)" deck page/
+        deck = Deck.where(name: $1).take
+        deck_path(deck)
+
+      when /the decks page/
+        decks_path
       # Add more mappings here.
       # Here is an example that pulls values out of the Regexp:
       #

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/control_center' => 'welcome#control_center', as: 'control_center'
 
+  resources :decks
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

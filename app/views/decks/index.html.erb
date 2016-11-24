@@ -1,0 +1,4 @@
+<% @decks.each do |d| %>
+    <%= d.name %>
+    <%= link_to "Delete", deck_path(d), method: :delete, class: "btn btn-danger" %>
+<% end %>
