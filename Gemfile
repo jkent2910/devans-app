@@ -12,13 +12,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+group :development do
+  gem 'web-console', '~> 2.0'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
