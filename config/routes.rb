@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/control_center' => 'welcome#control_center', as: 'control_center'
+  post '/decks/get_next_card' => 'decks#get_next_card'
+  post 'cards/check_answer' => 'cards#check_answer'
+
 
   resources :decks do
+    member do
+      get :play_deck
+    end
     resources :cards do
       resources :card_fronts, shallow: true
       resources :card_backs, shallow: true

@@ -1,1 +1,17 @@
-<%= link_to "Create New Deck", new_deck_path, class: "btn btn-primary" %>
+<div class="container page-container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>What would you like to do?</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <%= link_to "Learn Something", decks_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row second-button-row">
+    <div class="col-md-12 text-center">
+      <%= link_to "Build a New Deck", new_deck_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>

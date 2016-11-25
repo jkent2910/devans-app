@@ -1,5 +1,15 @@
-<% @decks.each do |d| %>
-    <%= d.name %>
-    <%= link_to "Delete", deck_path(d), method: :delete, class: "btn btn-danger" %>
-    <%= link_to "Edit", edit_deck_path(d), class: "btn btn-success" %>
-<% end %>
+<div class="container page-container">
+  <h2>Your Decks</h2>
+  <%= link_to "Create New Deck", new_deck_path, class: "btn btn-primary" %><br /><br />
+  <% @decks.each do |d| %>
+      <div class="well">
+        <h2><%= d.name %></h2>
+        <h4>Cards: <%= d.cards.count %></h4>
+            <%= link_to "Play Deck", play_deck_deck_path(d), class: "btn btn-success" %>
+            <%= link_to "Add/Edit Cards", deck_path(d), class: "btn btn-default" %> <br /><br />
+
+            <%= link_to "Delete", deck_path(d), method: :delete, class: "btn-sm btn-danger" %>
+            <%= link_to "Edit", edit_deck_path(d), class: "btn-sm btn-primary" %>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<div class="container page-container">
+  <div class="col-md-offset-4 col-md-4">
+    <div class="card">
+      <h4><%= @card_front.question %></h4>
+      <% if @card.card_type == "Multiple Choice" %>
+          <% @card_front.choices.each do |c| %><br />
+              <%= radio_button_tag("choice", c.choice_text ) %><%= c.choice_text %>
+          <% end %><br />
+          <div class="card-buttons">
+            <button class="btn btn-success" onClick="check_answer(this)" card-front-id="<%= @card_front.id %>">Check Answer</button>
+          </div>
+      <% else %>
+          <div class="card-buttons">
+            <%= link_to "Flip Card", card_back_path(@card.card_back.id), class: "btn btn-default" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

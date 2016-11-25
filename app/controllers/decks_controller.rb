@@ -1,5 +1,6 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: [:show, :edit, :update, :destroy]
+  include CardHelper
+  before_action :set_deck, only: [:show, :edit, :update, :destroy, :play_deck]
 
   def index
     @decks = Deck.all
@@ -46,6 +47,18 @@ class DecksController < ApplicationController
       format.html { redirect_to decks_path, notice: 'Deck deleted.' }
       format.json { head :no_content }
     end
+  end
+
+  def play_deck
+    @first_card = @deck.cards.first
+    @first_question = @first_card.card_front.question
+  end
+
+  def get_next_card
+    deck = Deck.find(Card.find(params[:card_id]).deck_id)
+    card_id = params[:card_id]
+
+    get_next_card_helper(deck, card_id)
   end
 
   private

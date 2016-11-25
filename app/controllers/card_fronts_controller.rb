@@ -2,6 +2,7 @@ class CardFrontsController < ApplicationController
   before_action :set_card_front, only: [:show, :edit, :update]
 
   def show
+    @card = Card.find(@card_front.card_id)
   end
 
   def new

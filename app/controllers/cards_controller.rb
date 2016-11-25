@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+  include CardHelper
 
   def index
     @cards = Card.all
@@ -30,12 +31,14 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @deck = Deck.find(params[:deck_id])
   end
 
   def update
+    @deck = Deck.find(params[:deck_id])
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to deck_card_path(@card), notice: "Card updated" }
+        format.html { redirect_to deck_path(@deck), notice: "Card updated" }
       else
         format.html { render :edit }
       end
@@ -47,6 +50,19 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to decks_path, notice: 'Card deleted.' }
       format.json { head :no_content }
+    end
+  end
+
+
+  def check_answer
+    card_front = CardFront.find(params[:card_front_id])
+    right_answer = card_front.choices.find_by(answer: true).choice_text
+    if params[:checked_value] == right_answer
+
+      deck_id = Card.find(card_front.card_id).deck_id
+      get_next_card_helper(deck_id, card_front.card_id)
+    else
+      redirect_to card_front_path(card_front), notice: "Try again"
     end
   end
 

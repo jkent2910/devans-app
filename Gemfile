@@ -4,6 +4,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'cocoon'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
+gem "font-awesome-rails"
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'pg'

@@ -1,2 +1,28 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="homepage-hero-module">
+  <div class="video-container">
+    <div class="filter"></div>
+    <div class="nav-header">
+      <div class="row">
+        <div class="col-md-offset-10 col-md-2">
+          <% unless user_signed_in? %>
+            <%= link_to "Devan Sign In", new_user_session_path, class: "btn btn-default" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="welcome-header">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="header-text">Merry Christmas</h1>
+        </div>
+      </div>
+    </div>
+    <video autoplay loop class="fillWidth">
+      <source src="/assets/Merry-Xmas.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      <source src="/assets/Merry-Xmas.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+    </video>
+    <div class="poster hidden">
+      <%= image_tag('Merry-Xmas.jpg.jpg') %>
+    </div>
+  </div>
+</div>

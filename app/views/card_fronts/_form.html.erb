@@ -1,18 +1,29 @@
 <%= simple_form_for([@deck, @card, @card_front], html: {class: 'form-horizontal'}) do |f| %>
+
+    <% if @card_front.errors.any? %>
+        <ul>
+          <% @card_front.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+
     <%= f.input :question, as: :text %>
 
   <% if @card.card_type == "Multiple Choice" %>
-        <h2>Choices</h2>
+        <h4>What are the choices?</h4>
         <div id="choices">
           <%= f.simple_fields_for :choices do |choice| %>
             <%= render 'choice_fields', f: choice %>
           <% end %>
           <div class="links">
-            <%= link_to_add_association 'Add Choice', f, :choices %>
+            <%= link_to_add_association 'Add Choice', f, :choices, class: "btn btn-default" %>
           </div>
         </div>
   <% end %>
 
-
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <div class="row button-div"><br /><br />
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
 <% end %>

@@ -14,3 +14,22 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "welcome";
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.page-container {
+  margin-top: 35px;
+}
+
+.second-button-row {
+  margin-top: 15px;
+}

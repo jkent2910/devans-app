@@ -14,12 +14,11 @@ Then(/^there should be a card created for the "([^"]*)" deck$/) do |deck_name|
 end
 
 Then(/^there should be a card with question "([^"]*)"$/) do |question|
-  expect(CardFront.find_by(question: question)).to_not be_nil 
+  expect(CardFront.find_by(question: question)).to_not be_nil
 end
 
 Then(/^there should be a card with one choice$/) do
   card = Card.last.id
   card_front = CardFront.where(card_id: card).last
   expect(card_front.choices.count).to eq(1)
-
 end

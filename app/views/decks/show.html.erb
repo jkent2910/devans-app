@@ -1,7 +1,53 @@
-<%= link_to "Add Card", new_deck_card_path(@deck), class: "btn btn-success" %>
-
-<%= @cards.count %> Cards Created <br />
-
-<% @cards.each do |c| %>
-    <%= c.card_type %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2><%= @deck.name %></h2>
+    </div>
+    <div class="col-md-12 text-center">
+      <h4><%= @cards.count %> Card(s) in this deck</h4>
+    </div>
+    <div class="col-md-12 text-center">
+      <%= link_to "Add Card", new_deck_card_path(@deck), class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
+<div class="container page-container">
+  <table class="table">
+    <tr>
+      <th>
+        Card ID
+      </th>
+      <th>
+        Card Type
+      </th>
+      <th>
+        Card Question
+      </th>
+      <th>
+        Edit Card
+      </th>
+      <th>
+        Delete Card
+      </th>
+    </tr>
+    <% @cards.each do |c| %>
+    <tr>
+      <td>
+        <%= c.id %>
+      </td>
+      <td>
+        <%= c.card_type %>
+      </td>
+      <td>
+        <%= c.card_front.question %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_deck_card_path(@deck, c), class: "btn btn-default" %>
+      </td>
+      <td>
+        <%= link_to "Delete", deck_card_path(@deck, c), method: :delete, class: "btn btn-danger" %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
