@@ -10,6 +10,9 @@ module CardHelper
     end
     sorted = larger_ids.sort
     if sorted.length <= 1
+      deck = Deck.find(deck)
+      deck_count = Deck.find(deck).total_count
+      deck.update_attributes(total_count: deck_count + 1)
       redirect_to decks_path, notice: "You're done!"
     else
       next_highest_id = sorted[1]
