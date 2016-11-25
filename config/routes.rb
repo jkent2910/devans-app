@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/control_center' => 'welcome#control_center', as: 'control_center'
+  get '/random_quick_workout' => 'quick_workouts#random_quick_workout', as: 'random_quick_workout'
   post '/decks/get_next_card' => 'decks#get_next_card'
   post 'cards/check_answer' => 'cards#check_answer'
 
@@ -22,5 +23,7 @@ Rails.application.routes.draw do
       resources :card_backs, shallow: true
     end
   end
+
+  resources :quick_workouts
 
 end
