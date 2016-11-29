@@ -1,0 +1,14 @@
+<div class="container page-container">
+  <div class="col-md-offset-4 col-md-4">
+    <div class="card">
+      <h3><%= @medium_workout.workout %></h3>
+      <div class="card-buttons">
+        <div class="row text-center">
+          <%= link_to random_medium_workout_path, class: "btn btn-primary flip-btn-small" do  %>
+              <%= fa_icon("random 2x") %><h4>Generate New Random Workout</h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

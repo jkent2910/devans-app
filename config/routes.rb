@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/control_center' => 'welcome#control_center', as: 'control_center'
   get '/random_quick_workout' => 'quick_workouts#random_quick_workout', as: 'random_quick_workout'
+  get '/random_medium_workout' => 'medium_workouts#random_medium_workout', as: 'random_medium_workout'
+
   post '/decks/get_next_card' => 'decks#get_next_card'
   post 'cards/check_answer' => 'cards#check_answer'
 
@@ -25,5 +27,6 @@ Rails.application.routes.draw do
   end
 
   resources :quick_workouts
+  resources :medium_workouts
 
 end
