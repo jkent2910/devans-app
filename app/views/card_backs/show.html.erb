@@ -1,11 +1,11 @@
 <div class="container page-container">
   <div class="col-md-offset-4 col-md-4">
     <div class="card">
-      <h4><%= @card_back.answer %></h4>
+      <h3><%= @card_back.answer %></h3>
       <div class="card-buttons">
         <div class="row">
           <div class="col-md-offset-3 col-md-4">
-            <button class="btn btn-primary" onClick="next_card(this)" card-id="<%= @card_back.card_id %>">Next Card</button>
+            <button class="btn flip-btn" onClick="next_card(this)" card-id="<%= @card_back.card_id %>">Next Card</button>
           </div>
         </div>
       </div>

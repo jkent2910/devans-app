@@ -5,14 +5,15 @@
     </div>
     <div class="col-md-12 text-center">
       <h4><%= @cards.count %> Card(s) in this deck</h4>
+      <h4>You've completed this deck <%= @deck.total_count %> time(s)</h4>
     </div>
     <div class="col-md-12 text-center">
-      <%= link_to "Add Card", new_deck_card_path(@deck), class: "btn btn-success" %>
+      <%= link_to "Add Card", new_deck_card_path(@deck), class: "btn btn-success flip-btn" %>
     </div>
   </div>
 </div>
 <div class="container page-container">
-  <table class="table">
+  <table class="table deck-table">
     <tr>
       <th>
         Card ID

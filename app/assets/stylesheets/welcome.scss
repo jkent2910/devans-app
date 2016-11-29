@@ -64,6 +64,8 @@
 .header-text {
   margin-top: 85px;
   font-size: 72px;
+  font-family: 'Bungee Inline', cursive;
+  color: red;
 }
 
 .button-div {
@@ -71,12 +73,62 @@
 }
 
 .card {
-  border: 1px solid black;
+  border: 3px solid #637081;
+  border-radius: 10px;
   margin: 10px;
   padding: 25px;
   padding-bottom: 200px;
+  background-color: #e7e7e7;
+}
+
+.flip-btn {
+  padding: 20px 30px 20px 30px;
+  border: 2px solid #637081;
+  background-color: lightskyblue;
+}
+
+.flip-btn-small {
+  padding: 10px 20px 10px 20px;
+  border: 2px solid #637081;
+  background-color: lightskyblue;
+}
+
+.flip-btn:hover {
+  background-color: #7C98B3;
+  border: 2px solid white;
+}
+
+.flip-btn-small:hover {
+  background-color: #7C98B3;
+  border: 2px solid white;
+}
+
+.extra-margin-top {
+  margin-top: 80px;
 }
 
 .card-buttons {
   margin-top: 170px;
+}
+
+.nav-header-text {
+  font-family: 'Yellowtail', cursive;
+  font-size: 28px;
+  color: #536B78;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 20px;
+  color: #536B78;
+}
+
+.deck-table {
+  background-color: #e7e7e7;
+  border: 2px solid #536B78;
+  margin: 10px;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  border-top: 1px solid #637081;
+  padding: 12px;
 }

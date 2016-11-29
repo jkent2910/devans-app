@@ -1,10 +1,14 @@
 <div class="container page-container">
-  <h2>Your Decks</h2>
-  <%= link_to "Create New Deck", new_deck_path, class: "btn btn-primary" %><br /><br />
+  <h1>Your Decks</h1>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <%= link_to "Create New Deck", new_deck_path, class: "btn btn-primary" %><br /><br />
+    </div>
+  </div>
   <% @decks.each do |d| %>
       <div class="well">
         <h2><%= d.name %></h2>
-        <h4>You've completed this deck <%= d.total_count %> times</h4>
+        <h4>You've completed this deck <%= d.total_count %> time(s)</h4>
         <h5>Cards: <%= d.cards.count %></h5>
             <%= link_to "Play Deck", play_deck_deck_path(d), class: "btn btn-success" %>
             <%= link_to "Add/Edit Cards", deck_path(d), class: "btn btn-default" %> <br /><br />
