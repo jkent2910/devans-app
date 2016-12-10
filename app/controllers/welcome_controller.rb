@@ -3,7 +3,9 @@ class WelcomeController < ApplicationController
   end
 
   def control_center
+  end
 
+  def welcome_message
   end
 
 end

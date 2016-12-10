@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get '/welcome_message' => 'welcome#welcome_message', as: 'welcome_message'
   get '/control_center' => 'welcome#control_center', as: 'control_center'
   get '/random_quick_workout' => 'quick_workouts#random_quick_workout', as: 'random_quick_workout'
   get '/random_medium_workout' => 'medium_workouts#random_medium_workout', as: 'random_medium_workout'
