@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
+gem 'sendgrid-ruby'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'turbolinks'
