@@ -3,7 +3,7 @@ class QuoteMailer < ApplicationMailer
 
     @random_subject = random_subject.sample
     @quote = random_quote.sample
-    mail(from: 'jkent2910@gmail.com',
+    mail(from: 'yoursupergreatgf@gmail.com',
          to: 'devan.moylan@backyardlion.com',
          subject: @random_subject)
   end
@@ -17,7 +17,7 @@ class QuoteMailer < ApplicationMailer
     "Remember when you took that head of lettuce and bell pepper from the breakfast buffet at the Disney cruise... that was obviously there for decoration... and then the waitress came and brought you shredded lettuce and peppers?",
     "Walking on the beach in Florida.. you talking about giving the birds a shit ton of caffeine", "Waking up and going on a ruck-sack carry before the sun came up", "Almost missing the boat in the Bahamas", "Having sex on the balcony and then the people coming out....",
     "Me thinking you thought fish could fly up out of the river and die on the cement", "Cats ---> Lions, Lions <--- Cats", "Just tell me the story about getting high in Wal-mart again.  That always makes me laugh",
-    "Playing catch in the backyard :) becoming lions!", "I'm sorry about the toothpaste", "This is my second direct experience.....", "Do you play rugby or something man?", "Can I get to that?", "Will you make me a cashew butter, sauerkraut sandwich please?",
+    "Playing catch in the backyard :) becoming lions!", "I'm sorry about the toothpaste", "This is my second similar direct experience.....", "Do you play rugby or something man?", "Can I get to that?", "Will you make me a cashew butter, sauerkraut sandwich please?",
     "You make me smile", "You make me laugh"]
   end
 
