@@ -3,10 +3,12 @@ class WelcomeController < ApplicationController
   end
 
   def control_center
+=begin
     if current_user.email == "devan.moylan@backyardlion.com"
       time_to_send = generate_random_time
       QuoteMailer.delay(run_at: time_to_send).weekly_quote
     end
+=end
   end
 
   def welcome_message
